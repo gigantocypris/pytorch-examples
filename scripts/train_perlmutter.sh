@@ -12,9 +12,10 @@
 #SBATCH -o logs/%x-%j.out
 
 # Setup software
-module load pytorch/1.13.1
+module load pytorch/1.11.0
 export MASTER_ADDR=$(hostname)
 export MASTER_PORT=29500
+export NUMEXPR_MAX_THREADS=128
 
 echo "jobstart $(date)";pwd
 
